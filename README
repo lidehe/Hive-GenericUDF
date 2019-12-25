@@ -1,0 +1,18 @@
+############################
+ @author lidehe
+ Nov 5,2019
+############################
+
+-- 使用UDF的方式：
+
+    - 第一种
+        add jar localPath/udf.jar;
+        add jar hdfsPath/udf.jar;
+        create  function ccc as 'XXXXXUDF';
+
+    - 第二种
+        create  function ccc as 'xxxxUDF' using jar 'localPath/udf.jar';
+        create  function ccc as 'xxxxUDF' using jar 'hdfsPath/udf.jar';
+
+-- 使用货币汇率数据文件
+     set mapred.cache.files=localPath/cucrrency.csv;
